@@ -1,0 +1,19 @@
+<% @page_title = "Delete Exam Type: #{@exam_type.exam_name}" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Delete Exam Type</h2>
+
+  <%= form_for(:exam_type, :url => {:action => 'destroy', :id => @exam_type.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this Exam Type?</p>
+
+    <p><%= @exam_type.exam_name %></p>
+
+    <div>
+      <%= submit_tag("Delete Exam Type", :class => "btn btn-danger") %>
+    </div>
+
+  <% end %>
+</div>

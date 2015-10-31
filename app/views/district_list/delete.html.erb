@@ -1,0 +1,19 @@
+<% @page_title = "Delete District: #{@district_list.district_name}" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Delete District</h2>
+
+  <%= form_for(:district_list, :url => {:action => 'destroy', :id => @district_list.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this District?</p>
+
+    <p><%= @district_list.district_name %></p>
+
+    <div>
+      <%= submit_tag("Delete District", :class => "btn btn-danger") %>
+    </div>
+
+  <% end %>
+</div>

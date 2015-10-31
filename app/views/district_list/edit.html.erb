@@ -1,0 +1,16 @@
+<% @page_title = "Edit District: #{@district_list.district_name}" -%>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div >
+  <h2>Edit District</h2>
+
+  <%= form_for(:district_list, :url => {:action => 'update', :id => @district_list.id}) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f} ) %>
+
+    <div>
+      <%= submit_tag('Update District', :class => "btn btn-warning") %>
+    </div>
+  <% end %>
+</div>

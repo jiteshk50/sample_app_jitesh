@@ -1,0 +1,47 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Show Parent</h2>
+
+   
+   <table class="table table-striped">
+    
+    <tr >
+      <th>Name</th>
+      <td><%= @parent.parent_name %></td>
+    </tr>
+    
+    <tr >
+      <th>Position</th>
+      <td><%= @parent.position %></td>
+    </tr>
+    <tr >
+      <th>Visible?</th>
+      <td><%= @parent.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr >
+      <th>address</th>
+      <td><%= @parent.parent_address %></td>
+    </tr>
+    <tr >
+      <th>DOB</th>
+      <td><%= @parent.parent_mobile %></td>
+    </tr>
+    
+    
+    <tr>
+      <th>School Name</th>
+      <td><%= @parent.school.school_name if @parent.school %></td>
+    </tr>
+    <tr >
+      <th>Created</th>
+      <td><%= @parent.created_at %></td>
+    </tr>
+    <tr >
+      <th>Updated</th>
+      <td><%= @parent.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

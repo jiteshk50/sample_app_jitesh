@@ -1,0 +1,45 @@
+<% @page_title = "Exam Result" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+<div >
+  <h2>Results</h2>
+
+  <%= link_to('Add New Result', {:action => 'new'}, :class => "btn btn-warning") %>
+
+  <div><%= pluralize(@exam_results.size, 'school') %> found</div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>School Name</th>
+      <th>Exam Type</th>
+      <th>Student Name</th>
+      <th>Subject</th>
+      <th>Class</th>
+      <th>Marks Obtained </th>
+      <th>Grade</th>
+      
+      
+      
+      <th>Action</th>
+    </tr>
+    <% @exam_results.each do |exam_result| %>
+    <tr>
+      <td><%= exam_result.school.school_name if exam_result.school %></td>
+      <td><%= exam_result.exam_type.exam_name if exam_result.exam_type %></td>
+      <td><%= exam_result.student.name if exam_result.student %></td>
+      <td><%= exam_result.subject.subject_name if exam_result.subject %></td>
+      <td><%= exam_result.classroom.csection if exam_result.classroom %></td>
+      <td><%= exam_result.marks %></td>
+      <td><%= exam_result.grade %></td>
+      
+      
+      <td >
+        
+        <%= link_to('Edit', {:action => 'edit', :id => exam_result.id}, :class => "btn btn-success") %>
+        <%= link_to('Delete', {:action => 'delete', :id => exam_result.id}, :class => "btn btn-danger") %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

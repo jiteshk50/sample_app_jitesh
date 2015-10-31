@@ -1,0 +1,32 @@
+<% @page_title = "Exam Type List" %>
+
+<%= link_to("<< Back to List", {:controller=>'exam_types', :action => 'index'}) %>
+
+<div >
+  <h2>Exam Type</h2>
+
+  <%= link_to('Add New Exam Type', {:action => 'new'}, :class => "btn btn-warning") %>
+
+  <div><%= pluralize(@exam_types.size, 'admin user') %> found</div>
+
+  <table class="table table-striped">
+    <tr>
+      
+      <th>Exam Name</th>
+     
+      <th>Actions</th>
+    </tr>
+    <% @exam_types.each do |exam_type| %>
+    <tr>
+      
+      <td><%= exam_type.exam_name %></td>
+     
+      <td >
+        <%= link_to('Edit', {:action => 'edit', :id => exam_type.id}, :class => "btn btn-success") %>
+        <%= link_to('Delete', {:action => 'delete', :id => exam_type.id}, :class => "btn btn-danger") %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

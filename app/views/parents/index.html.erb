@@ -1,0 +1,40 @@
+<% @page_title = "Parent List" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+<div >
+  <h2>Parent</h2>
+
+  <%= link_to('Add New Parent', {:action => 'new'}, :class => "btn btn-warning") %>
+
+  <div><%= pluralize(@parents.size, 'parent') %> found</div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Parent Name</th>
+      <th>Position</th>
+      <th>Visible</th>
+      <th>School</th>
+      
+      
+      
+      
+      <th>Action</th>
+    </tr>
+    <% @parents.each do |parent| %>
+    <tr>
+      <td><%= parent.parent_name %></td>
+      <td><%= parent.position%></td>
+      <td><%= parent.visible %></td>
+      <td><%= parent.school.school_name if parent.school %></td>
+      
+      
+      <td >
+        <%= link_to('view', {:action => 'show', :id => parent.id}, :class => "btn btn-primary") %>
+        <%= link_to('Edit', {:action => 'edit', :id => parent.id}, :class => "btn btn-success") %>
+        <%= link_to('Delete', {:action => 'delete', :id => parent.id}, :class => "btn btn-danger") %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

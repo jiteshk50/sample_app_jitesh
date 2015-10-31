@@ -1,0 +1,33 @@
+<%= error_messages_for(@classroom) %>
+<table class="table table-striped">
+  <tr>
+    <th><%= f.label(:classroom_name) %></th>
+    <td><%= f.select(:classroom_name,['class 1', 'class 2', 'class 3', 'class 4', 'class 5', 'class 6','class 7', 'class 8', 'class 9', 'class 10']) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@classroom_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:session) %></th>
+    <td><%= f.select(:session, 1990..2016) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:section) %></th>
+    <td><%= f.select(:section,[' N/A ','A','B','C']) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:school_id) %></th>
+    <td><%= f.select(:school_id, @school.map {|s| [s.school_name, s.id]}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:teacher_id) %></th>
+    <td><%= f.select(:teacher_id, @schoolTeacher.map {|s| [s.teacher_name, s.id]}) %></td>
+  </tr>
+  
+    
+</table>

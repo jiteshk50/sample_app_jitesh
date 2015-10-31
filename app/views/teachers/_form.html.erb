@@ -1,0 +1,36 @@
+<%= error_messages_for(@teacher) %>
+<table class="table table-striped">
+  <tr>
+    <th><%= f.label(:teacher_name) %></th>
+    <td><%= f.text_field(:teacher_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@teacher_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:email) %></th>
+    <td><%= f.text_field(:email) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:dob) %></th>
+    <td><%= f.date_select(:dob, {:start_year=>Time.now.year-60, :end_year=>Time.now.year-18}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:teacher_phone) %></th>
+    <td><%= f.text_field(:teacher_phone) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:address) %></th>
+    <td><%=  f.text_area(:address) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:school_id) %></th>
+    <td><%= f.select(:school_id, @school.map {|s| [s.school_name, s.id]}) %></td>
+  </tr>
+    
+</table>

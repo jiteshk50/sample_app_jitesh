@@ -1,0 +1,61 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Show School</h2>
+
+   
+   <table class="table table-striped">
+    
+    <tr >
+      <th>Name</th>
+      <td><%= @school.school_name %></td>
+    </tr>
+    
+    <tr >
+      <th>Position</th>
+      <td><%= @school.position %></td>
+    </tr>
+    <tr >
+      <th>Visible?</th>
+      <td><%= @school.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr >
+      <th>Address Line 1</th>
+      <td><%= @school.address_line_1 %></td>
+    </tr>
+    <tr >
+      <th>PIN</th>
+      <td><%= @school.PIN %></td>
+    </tr>
+    <tr >
+      <th>School Code</th>
+      <td><%= @school.school_code %></td>
+    </tr>
+    <tr >
+      <th>District</th>
+      <td><%= @school.district %></td>
+    </tr>
+    <tr >
+      <th>Block</th>
+      <td><%= @school.block %></td>
+    </tr>
+    <tr >
+      <th>Cluster</th>
+      <td><%= @school.cluster %></td>
+    </tr>
+    <tr>
+      <th>Admin User</th>
+      <td><%= @school.admin_user.name if @school.admin_user %></td>
+    </tr>
+    <tr >
+      <th>Created</th>
+      <td><%= @school.created_at %></td>
+    </tr>
+    <tr >
+      <th>Updated</th>
+      <td><%= @school.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

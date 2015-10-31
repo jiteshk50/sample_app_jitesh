@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Delete School</h2>
+
+  <%= form_for(:school, :url => {:action => 'destroy', :id => @school.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this school?</p>
+
+    <p ><%= @school.school_name %></p>
+
+    <div>
+      <%= submit_tag("Delete School", :class => "btn btn-danger") %>
+    </div>
+
+  <% end %>
+</div>

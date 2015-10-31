@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleAppJitesh</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <title>AssamSchool</title>
+  <%= stylesheet_link_tag('application', :media => 'all') %>
+  <%= javascript_include_tag('application') %>
 </head>
-<body>
+<body style="
+    background-color: #fff; padding-left: 5%; padding-right: 5%;">
+<% if !flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+ <% end %>
 
 <%= yield %>
 

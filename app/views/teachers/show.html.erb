@@ -1,0 +1,54 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Show Teacher</h2>
+
+   
+   <table class="table table-striped">
+    
+    <tr >
+      <th>Name</th>
+      <td><%= @teacher.teacher_name %></td>
+    </tr>
+    
+    <tr >
+      <th>Position</th>
+      <td><%= @teacher.position %></td>
+    </tr>
+    <tr >
+      <th>Visible?</th>
+      <td><%= @teacher.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr >
+      <th>email</th>
+      <td><%= @teacher.email %></td>
+    </tr>
+    <tr >
+      <th>DOB</th>
+      <td><%= @teacher.dob %></td>
+    </tr>
+    <tr >
+      <th>Teacher Phone Number</th>
+      <td><%= @teacher.teacher_phone %></td>
+    </tr>
+    <tr >
+      <th>Address</th>
+      <td><%= @teacher.address %></td>
+    </tr>
+    
+    <tr>
+      <th>School Name</th>
+      <td><%= @teacher.school.school_name if @teacher.school %></td>
+    </tr>
+    <tr >
+      <th>Created</th>
+      <td><%= @teacher.created_at %></td>
+    </tr>
+    <tr >
+      <th>Updated</th>
+      <td><%= @teacher.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

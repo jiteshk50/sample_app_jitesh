@@ -1,0 +1,17 @@
+<% @page_title = 'Create District' %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div >
+  <h2>Create District</h2>
+
+  <%= form_for(:district_list, :url => {:action => 'create'}) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f} ) %>
+
+    <div>
+      <%= submit_tag('Create District', :class => "btn btn-success") %>
+    </div>
+
+  <% end %>
+</div>

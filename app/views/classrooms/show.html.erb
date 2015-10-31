@@ -1,0 +1,51 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Show Classroom</h2>
+
+   
+   <table class="table table-striped">
+    
+    <tr >
+      <th>Name</th>
+      <td><%= @classroom.classroom_name %></td>
+    </tr>
+    
+    <tr >
+      <th>Position</th>
+      <td><%= @classroom.position %></td>
+    </tr>
+    <tr >
+      <th>Session</th>
+      <td><%= @classroom.session %></td>
+    </tr>
+    <tr >
+      <th>Visible?</th>
+      <td><%= @classroom.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr >
+      <th>section</th>
+      <td><%= @classroom.section %></td>
+    </tr>
+    <tr>
+      <th>School Name</th>
+      <td><%= @classroom.school.school_name if @classroom.school %></td>
+    </tr>
+    <tr>
+      <th>Class Teacher Name</th>
+      <td><%= @classroom.teacher.teacher_name if @classroom.teacher %></td>
+    </tr>
+    
+    
+    <tr >
+      <th>Created</th>
+      <td><%= @classroom.created_at %></td>
+    </tr>
+    <tr >
+      <th>Updated</th>
+      <td><%= @classroom.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,46 @@
+<%= error_messages_for(@school) %>
+<table class="table table-striped">
+  <tr>
+    <th><%= f.label(:school_name) %></th>
+    <td><%= f.text_field(:school_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@school_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:address_line_1) %></th>
+    <td><%= f.text_field(:address_line_1) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:PIN) %></th>
+    <td><%= f.text_field(:PIN) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:school_code) %></th>
+    <td><%= f.text_field(:school_code) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:district) %></th>
+    <td><%= f.select(:district, @district_lists.map {|s| [s.district_name]}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:block) %></th>
+    <td><%= f.select(:block, @block_lists.map {|s| [s.block_name]}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:cluster) %></th>
+    <td><%= f.text_field(:cluster) %></td>
+  </tr>
+  <tr>
+        <th><%= f.label(:admin_user_id, "Admin User") %></th>
+        <td><%= f.label(:admin_user_id, session[:user_id]) %></td>
+ </tr>
+
+
+  
+</table>

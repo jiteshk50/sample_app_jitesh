@@ -1,0 +1,39 @@
+<%= error_messages_for(@exam_result) %>
+<table class="table table-striped">
+<tr>
+    <th><%= f.label(:student_id, "Student Name") %></th>
+    <td><%= f.select(:student_id, @classroomStudent.map {|s| [s.name, s.id]}) %></td>
+  </tr>
+
+  <tr>
+    <th><%= f.label(:school_id, "School") %></th>
+    <td><%= f.select(:school_id, @school.map {|s| [s.school_name, s.id]}) %></td>
+  </tr>
+
+   <tr>
+    <th><%= f.label(:classroom_id, "Class") %></th>
+    <td><%= f.select(:classroom_id, @studentClassroom.map {|s| [s.csection, s.id]}) %></td>
+  </tr>
+
+  <tr>
+    <th><%= f.label(:exam_type_id, "Exam Name") %></th>
+    <td><%= f.select(:exam_type_id, @exam_types.map {|s| [s.exam_name, s.id]}) %></td>
+  </tr>
+
+    <tr>
+    <th><%= f.label(:subject_id, "Subject") %></th>
+    <td><%= f.select(:subject_id, @subjects.map {|s| [s.subject_name, s.id]}) %></td>
+  </tr>
+
+ 
+   <tr>
+    <th><%= f.label(:marks, "Marks") %></th>
+    <td><%= f.text_field(:marks) %></td>
+  </tr>
+
+   <tr>
+    <th><%= f.label(:grade, "Grade") %></th>
+    <td><%= f.select(:grade, ['A', 'B', 'C', 'D'] )%></td>
+  </tr>
+
+</table>

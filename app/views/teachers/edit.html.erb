@@ -1,0 +1,15 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div >
+  <h2>Update Teacher</h2>
+
+  <%= form_for(:teacher, :url => {:action => 'update', :id => @teacher.id}) do |f| %>
+
+   <%= render(:partial => "form" , :locals => {:f => f}) %>
+
+    <div >
+      <%= submit_tag("Update Teacher", :class => "btn btn-warning") %>
+    </div>
+
+  <% end %>
+</div>

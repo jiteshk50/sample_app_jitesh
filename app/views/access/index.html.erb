@@ -1,0 +1,49 @@
+
+<div>
+
+	<h2>Admin Menu</h2>
+	<p>Logged in as: <%= session[:username] %>  having user_id=<%= session[:user_id] %></p>
+
+<div>
+<ul>
+	
+	<li>
+		<%= link_to("manage District ", {:controller=>'district_list'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Block ", {:controller=>'block_list'}) %>
+	</li>
+	<li>
+		<%= link_to("manage School Records", {:controller=>'schools'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Teacher Records", {:controller=>'teachers'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Classroom Records", {:controller=>'classrooms'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Parents Records", {:controller=>'parents'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Students Records", {:controller=>'students'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Exam Type ", {:controller=>'exam_types'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Subject ", {:controller=>'subjects'}) %>
+	</li>
+	<li>
+		<%= link_to("manage Exam Results", {:controller=>'exam_results'}) %>
+	</li>
+
+		
+</ul>
+<div>
+	<%= link_to("logout", {:action=>'logout'}, {:class => "btn btn-success"}) %>
+</div>
+
+</div>
+
+</div>

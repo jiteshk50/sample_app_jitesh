@@ -1,0 +1,19 @@
+<% @page_title = "Delete Subject: #{@subject.subject_name}" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Delete Subject</h2>
+
+  <%= form_for(:subject, :url => {:action => 'destroy', :id => @subject.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this Subject?</p>
+
+    <p><%= @subject.subject_name %></p>
+
+    <div>
+      <%= submit_tag("Delete Subject", :class => "btn btn-danger") %>
+    </div>
+
+  <% end %>
+</div>

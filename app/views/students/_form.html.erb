@@ -1,0 +1,49 @@
+<%= error_messages_for(@student) %>
+<table class="table table-striped">
+  <tr>
+    <th>Student Photograph</th>
+    <td><%= f.file_field :image %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:student_first_name, "First Name") %></th>
+    <td><%= f.text_field(:student_first_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:student_last_name, "Last Name") %></th>
+    <td><%= f.text_field(:student_last_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@student_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:father_name, "Father's Name") %></th>
+    <td><%= f.text_field(:father_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:mother_name, "Mother's Name") %></th>
+    <td><%= f.text_field(:mother_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:dob) %></th>
+    <td><%= f.date_select(:dob, {:start_year=>Time.now.year-18, :end_year=>Time.now.year-3}) %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label(:school_id, "School") %></th>
+    <td><%= f.select(:school_id, @school.map {|s| [s.school_name, s.id]}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:parent_id, "Guardian") %></th>
+    <td><%= f.select(:parent_id, @studentParent.map {|s| [s.parent_name, s.id]}) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:classroom_id, "Classroom") %></th>
+    <td><%= f.select(:classroom_id, @studentClassroom.map {|s| [s.classroom_name, s.id]}) %></td>
+  </tr>
+    
+</table>

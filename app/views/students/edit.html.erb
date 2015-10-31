@@ -1,0 +1,15 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div >
+  <h2>Update Student</h2>
+
+  <%= form_for(:student, :url => {:action => 'update', :id => @student.id}, html: { multipart: true }) do |f| %>
+
+   <%= render(:partial => "form" , :locals => {:f => f}) %>
+
+    <div >
+      <%= submit_tag("Update Student", :class => "btn btn-warning") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<% @page_title = 'Create Block' %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div >
+  <h2>Create Block</h2>
+
+  <%= form_for(:block_list, :url => {:action => 'create'}) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f} ) %>
+
+    <div>
+      <%= submit_tag('Create Block', :class => "btn btn-success") %>
+    </div>
+
+  <% end %>
+</div>

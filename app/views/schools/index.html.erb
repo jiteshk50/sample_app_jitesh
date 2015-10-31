@@ -1,0 +1,46 @@
+<% @page_title = "School List" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+<div >
+  <h2>School</h2>
+
+  <%= link_to('Add New School', {:action => 'new'}, :class => "btn btn-warning") %>
+
+  <div><%= pluralize(@schools.size, 'school') %> found</div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>School Name</th>
+      <th>Position</th>
+      <th>Visible</th>
+      <th>Address Line 1</th>
+      <th>PIN</th>
+      
+      <th>District</th>
+      
+      
+      
+      <th>Action</th>
+    </tr>
+    <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.school_name %></td>
+      <td><%= school.position%></td>
+      <td><%= school.visible %></td>
+      <td><%= school.address_line_1 %></td>
+      <td><%= school.PIN %></td>
+      
+      <td><%= school.district %></td>
+      
+      
+      <td >
+        <%= link_to('view', {:action => 'show', :id => school.id}, :class => "btn btn-primary") %>
+        <%= link_to('Edit', {:action => 'edit', :id => school.id}, :class => "btn btn-success") %>
+        <%= link_to('Delete', {:action => 'delete', :id => school.id}, :class => "btn btn-danger") %>
+        
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>

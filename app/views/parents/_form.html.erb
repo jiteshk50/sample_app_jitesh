@@ -1,0 +1,29 @@
+<%= error_messages_for(@parent) %>
+<table class="table table-striped">
+  <tr>
+    <th><%= f.label(:parent_name) %></th>
+    <td><%= f.text_field(:parent_name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@parent_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:parent_address) %></th>
+    <td><%= f.text_area(:parent_address) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:parent_mobile) %></th>
+    <td><%= f.text_field(:parent_mobile) %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label(:school_id) %></th>
+    <td><%= f.select(:school_id, @school.map {|s| [s.school_name, s.id]}) %></td>
+  </tr>
+    
+</table>

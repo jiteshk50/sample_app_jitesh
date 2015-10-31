@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Delete Result</h2>
+
+  <%= form_for(:exam_result, :url => {:action => 'destroy', :id => @exam_result.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this result?</p>
+
+    
+
+    <div>
+      <%= submit_tag("Delete Result", :class => "btn btn-danger") %>
+    </div>
+
+  <% end %>
+</div>

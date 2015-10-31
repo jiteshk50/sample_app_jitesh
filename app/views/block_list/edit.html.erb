@@ -1,0 +1,16 @@
+<% @page_title = "Edit Block: #{@block_list.block_name}" -%>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div >
+  <h2>Edit Block</h2>
+
+  <%= form_for(:block_list, :url => {:action => 'update', :id => @block_list.id}) do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f} ) %>
+
+    <div>
+      <%= submit_tag('Update Block', :class => "btn btn-warning") %>
+    </div>
+  <% end %>
+</div>

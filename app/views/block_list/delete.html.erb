@@ -1,0 +1,19 @@
+<% @page_title = "Delete Block: #{@block_list.block_name}" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div>
+  <h2>Delete Block</h2>
+
+  <%= form_for(:block_list, :url => {:action => 'destroy', :id => @block_list.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this Block?</p>
+
+    <p><%= @block_list.block_name %></p>
+
+    <div>
+      <%= submit_tag("Delete Block", :class => "btn btn-danger") %>
+    </div>
+
+  <% end %>
+</div>

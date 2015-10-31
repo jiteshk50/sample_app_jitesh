@@ -1,0 +1,44 @@
+<% @page_title = "Classroom List" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+<div >
+  <h2>Classroom</h2>
+
+  <%= link_to('Add New Classroom', {:action => 'new'}, :class => "btn btn-warning") %>
+
+  <div><%= pluralize(@classrooms.size, 'classroom') %> found</div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>School</th>
+      <th>Classroom Name</th>
+      <th>section</th>
+      <th>Position</th>
+      <th>Visible</th>
+      
+      
+      
+      
+      
+      <th>Action</th>
+    </tr>
+    <% @classrooms.each do |classroom| %>
+    <tr>
+      <td><%= classroom.school.school_name if classroom.school %></td>
+      <td><%= classroom.classroom_name %></td>
+      <td><%= classroom.section %></td>
+      <td><%= classroom.position%></td>
+      <td><%= classroom.visible %></td>
+      
+      
+      
+      <td >
+        <%= link_to('view', {:action => 'show', :id => classroom.id}, :class => "btn btn-primary") %>
+        <%= link_to('Edit', {:action => 'edit', :id => classroom.id}, :class => "btn btn-success") %>
+        <%= link_to('Delete', {:action => 'delete', :id => classroom.id}, :class => "btn btn-danger") %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+</div>
