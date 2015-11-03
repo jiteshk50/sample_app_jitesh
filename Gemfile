@@ -8,6 +8,7 @@ gem 'rails', '4.1.8'
 
 gem 'mysql2','~>0.3.18', :group => [:development, :test]
 gem 'pg', :group => [:production]
+gem 'rails_12factor', :group => [:production]
 
 
 
@@ -37,6 +38,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem "paperclip", "~> 4.3"
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
