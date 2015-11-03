@@ -1,6 +1,6 @@
 class AdminUserController < ApplicationController
 
-  
+ before_action :confirm_logged_in, :except => [:create] 
   def index
   	@admin_users = AdminUser.sorted
     
