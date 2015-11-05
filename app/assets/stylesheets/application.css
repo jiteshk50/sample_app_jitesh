@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap.css
+ *= require simple-sidebar.css
  *= require_tree .
  *= require_self
  */
