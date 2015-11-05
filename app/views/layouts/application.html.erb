@@ -5,92 +5,15 @@
   <%= stylesheet_link_tag('application', :media => 'all') %>
   <%= javascript_include_tag('application') %>
 </head>
-<body>
-
-
-<div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Assam School
-                    </a>
-                </li>
-			     <li>
-					<%= link_to("manage District ", {:controller=>'district_list'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Block ", {:controller=>'block_list'}) %>
-				</li>
-				<li>
-					<%= link_to("manage School Records", {:controller=>'schools'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Teacher Records", {:controller=>'teachers'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Classroom Records", {:controller=>'classrooms'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Parents Records", {:controller=>'parents'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Students Records", {:controller=>'students'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Exam Type ", {:controller=>'exam_types'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Subject ", {:controller=>'subjects'}) %>
-				</li>
-				<li>
-					<%= link_to("manage Exam Results", {:controller=>'exam_results'}) %>
-				</li>
-
-            </ul>
+<body style="
+    background-color: #fff; padding-left: 5%; padding-right: 5%;">
+<% if !flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice] %>
         </div>
-        <!-- /#sidebar-wrapper -->
+ <% end %>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        
-
-                    	<% if !flash[:notice].blank? %>
-				        <div class="notice">
-				          <%= flash[:notice] %>
-				        </div>
-						 <% end %>
-
-						<%= yield %>
-
-
-
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
+<%= yield %>
 
 </body>
 </html>
