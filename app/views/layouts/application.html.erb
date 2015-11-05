@@ -15,30 +15,40 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Assam School
                     </a>
                 </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+			     <li>
+					<%= link_to("manage District ", {:controller=>'district_list'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Block ", {:controller=>'block_list'}) %>
+				</li>
+				<li>
+					<%= link_to("manage School Records", {:controller=>'schools'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Teacher Records", {:controller=>'teachers'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Classroom Records", {:controller=>'classrooms'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Parents Records", {:controller=>'parents'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Students Records", {:controller=>'students'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Exam Type ", {:controller=>'exam_types'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Subject ", {:controller=>'subjects'}) %>
+				</li>
+				<li>
+					<%= link_to("manage Exam Results", {:controller=>'exam_results'}) %>
+				</li>
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -57,10 +67,10 @@
 						 <% end %>
 
 						<%= yield %>
-                    		
 
 
 
+						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>
             </div>
