@@ -10,6 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap.min
-//= require jquery-1.11.2.min
+//= require bootstrap.min.js
+//= require jquery-1.11.2.min.js
 //= require_tree .
